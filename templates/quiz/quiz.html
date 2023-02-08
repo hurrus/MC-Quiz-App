@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="width: 70%; margin: 0 auto; padding: 20px; background-color: beige; color: darkgray; border-radius: 20px; min-height: 250px;">    <h3 class="text-center">{{ question.question_text }}</h3>
+</div>
+    <form method="post">
+        {% csrf_token %}
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+    <li style="display: flex; align-items: center;">
+        <input type="radio" name="choice" value="1" id="choice1" style="margin-right: 10px;">
+        <label for="choice1">{{ answers.choice_1 }}</label>
+    </li>
+    <li style="display: flex; align-items: center;">
+        <input type="radio" name="choice" value="2" id="choice2" style="margin-right: 10px;">
+        <label for="choice2">{{ answers.choice_2 }}</label>
+    </li>
+    <li style="display: flex; align-items: center;">
+        <input type="radio" name="choice" value="3" id="choice3" style="margin-right: 10px;">
+        <label for="choice3">{{ answers.choice_3 }}</label>
+    </li>
+    <li style="display: flex; align-items: center;">
+        <input type="radio" name="choice" value="4" id="choice4" style="margin-right: 10px;">
+        <label for="choice4">{{ answers.choice_4 }}</label>
+    </li>
+    <li style="display: flex; align-items: center;">
+        <input type="radio" name="choice" value="5" id="choice5" style="margin-right: 10px;">
+        <label for="choice5">{{ answers.choice_5 }}</label>
+    </li>
+</ul>
+
+        <div class="form-group text-center">
+            <input type="submit" value="Vote">
+        </div>
+    </form>
+
+    <div class="nav-buttons text-center">
+        {% if prev_question_id %}
+            <a href="{% url 'question_view' question_id=prev_question_id %}" class="btn btn-secondary">Previous question</a>
+        {% endif %}
+        {% if next_question_id %}
+            <a href="{% url 'question_view' question_id=next_question_id %}" class="btn btn-secondary">Next question</a>
+        {% endif %}
+    </div>
+{% endblock %}

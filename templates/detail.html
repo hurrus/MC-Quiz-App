@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for comment in comments %}
+        <div class="comment">
+            <p>{{ comment.author }}: {{ comment.content }}</p>
+            <p class="date">{{ comment.created_at }}</p>
+        </div>
+    {% empty %}
+        <p>Es gibt noch keine Kommentare zu diesem Inhalt.</p>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+        <h3>Neuen Kommentar hinzufügen</h3>
+
+        <form method="post" action="{% url 'comment-create' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Absenden">
+        </form>
+    {% else %}
+        <br>
+        <br>
+        <p><b>Um einen Kommentar hinzuzufügen, melde dich bitte an.</b></p>
+    {% endif %}
+{% endblock %}

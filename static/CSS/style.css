@@ -1,0 +1,97 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: lightblue; /* Fügt eine Hintergrundfarbe hinzu */
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#menu li {
+    float: left;
+}
+
+#menu a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    background-color: lightgray;
+}
+#login-block {
+    float: right;
+}
+#login-block a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#login-block a:hover {
+    background-color: lightgray;
+}
+#login-form {
+    float: right;
+}
+
+#content {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid black;
+    background-color: lightgray;
+}
+
+#footer {
+    background-color: lightblue; /* Passt die Farbe der Fußzeile an, damit sie zum Menü passt */
+}
+
+.answer {
+  display: flex;
+  align-items: center;
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+    background-color: #00ff22;
+
+}
+
+  ul.errorlist {
+    color: red;
+  }
+
+
+.choice {
+  flex-grow: 1;
+}
+
+.progress-bar {
+  color: blue;
+}
+
+
+#login-form {
+    position: absolute;
+    background: white;
+    border: 1px solid gray;
+    padding: 10px;
+    z-index: 1;
+}

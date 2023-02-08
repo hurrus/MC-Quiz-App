@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Benutzerprofil</h1>
+    <p>Benutzername: {{ profile.user.username }}</p>
+    <p>Vorname: {{ profile.first_name }}</p>
+    <p>Nachname: {{ profile.last_name }}</p>
+    <p>Telefonnummer: {{ profile.phone }}</p>
+    <p>Beruf: {{ profile.profession }}</p>
+
+    <h2>Profilbild</h2>
+    {% if profile.profile_picture %}
+        <img src="{{ profile.profile_picture.url }}" alt="Profilbild">
+    {% else %}
+        <p>Kein Profilbild vorhanden</p>
+    {% endif %}
+{% endblock %}
+
+
+
+
